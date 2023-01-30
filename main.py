@@ -1,3 +1,4 @@
-import my_package
+import my_package.functions
+import my_package.constants
 
-print(my_package.NAME)
+my_package.functions.greet(my_package.constants.PERSON)
