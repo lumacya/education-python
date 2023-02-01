@@ -1,0 +1,9 @@
+monkey
+russia
+alice-bob@google.com
+lucy@yahoo.com
+banana
+foo
+bar
+spam
+
