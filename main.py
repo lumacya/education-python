@@ -1,7 +1,7 @@
 #! usr/bin/env python3
 
-def pow(number, power):
-    """Power first number to another one"""
-    return number ** power
+def get_pow(number_one, power=2):
+    """Return power of number one to number two"""
+    return number_one ** power
 
-print(pow(2, 2))
+print(get_pow(2))
