@@ -1,0 +1,15 @@
+[tool.poetry]
+name = "education-python"
+version = "0.1.0"
+description = ""
+authors = ["Ivan Gibert <vngbrt@gmail.com>"]
+readme = "README.md"
+packages = [{include = "education_python"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
