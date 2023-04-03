@@ -7,8 +7,7 @@ def get_square_roots(number):
     result_list = []
 
     if number < 0:
-        result_list.append('None')  # No roots
-        return result_list
+        return result_list  # No roots
 
     elif number == 0:
         zero = int(math.sqrt(number))  # Zero has only one root - zero
@@ -23,8 +22,12 @@ def get_square_roots(number):
         return result_list
 
 
-def get_range():
-    pass
+def get_range(n):
+    if n < 0 or n == 0:
+        return []
+
+    return [i for i in range(n)]
 
 
-print(get_square_roots(9))
+print(get_square_roots(-2))
+print(get_range(5))
