@@ -11,5 +11,6 @@ def rotated_right(arg):
     result = last_elem + without_last
     return result
 
+# FIX: Reuse code of one function to other function
 
 print(rotated_left((1, 2, 3, 4)))
