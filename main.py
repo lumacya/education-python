@@ -1,18 +1,10 @@
 #! usr/bin/env python3
-def make_user(user_name, user_age):
-    user = {
-        'name': user_name,
-        'age': user_age
-    }
+def count_all(iter_obj):
+    final_dict = {}
 
-    return user
+    for i in iter_obj:
+        final_dict[i] = iter_obj.count(i)
 
+    return final_dict
 
-def format_user(user):
-    formated_user = f"{user['name']}, {user['age']}"
-    return formated_user
-
-
-ivan = make_user('ivan', 18)
-print(ivan)
-print(format_user(ivan))
+print(count_all(['cat', 'dog', 'cat', 'cat']))
