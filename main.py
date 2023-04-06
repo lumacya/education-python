@@ -1,11 +1,18 @@
 #! usr/bin/env python3
-def find_index(value, iter_obj):
-    for index, item in enumerate(iter_obj):
-        if item == value:
-            return index
-        else:
-            continue
+def make_user(user_name, user_age):
+    user = {
+        'name': user_name,
+        'age': user_age
+    }
 
-    return None
+    return user
 
-print(find_index(2, [1, 3, 5]))
+
+def format_user(user):
+    formated_user = f"{user['name']}, {user['age']}"
+    return formated_user
+
+
+ivan = make_user('ivan', 18)
+print(ivan)
+print(format_user(ivan))
