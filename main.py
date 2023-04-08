@@ -1,10 +1,11 @@
 #! usr/bin/env python3
-def count_all(iter_obj):
-    final_dict = {}
+def greet(name, *args):
+    res_string = f'Hello, {name}'
 
-    for i in iter_obj:
-        final_dict[i] = iter_obj.count(i)
+    for n in args:
+        res_string += f' and {n}'
 
-    return final_dict
+    return res_string
 
-print(count_all(['cat', 'dog', 'cat', 'cat']))
+
+print(greet('Ivan'))
