@@ -1,23 +1,24 @@
 #! usr/bin/env python3
-def filter_map(function, iter_object):
-    mapped = list(map(function, iter_object))
-    filtered = []
-
-    for item in mapped:
-        if item[0] == True:
-            filtered.append(item[1])
-
-    return filtered
+from functools import reduce
+from operator import truth, getitem
 
 
+def keep_truthful(iterable):
+    return list(filter(truth, iterable))
 
-def make_stars(x):
-    if x > 0:
-        return True, '*' * x
-    return False, ''
+def abs_sum(iterable):
+    return sum(list(map(abs, iterable))) # type: ignore
+
+def walk(dct, path):  #FIX
+    return reduce(getitem, dct, path)
 
 
-lst = [1, 0, 5, -5, 2]
+dct = {
+    'a': {
+        7: {
+            'b': 42
+        }
+    }
+}
 
-for s in filter_map(make_stars, lst):
-    print(s)
+print(walk(dct, ['a', 7, 'b']))
