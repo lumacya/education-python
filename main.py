@@ -1,11 +1,23 @@
 #! usr/bin/env python3
-def call_twice(func, *args):
-    calls_list = []
+def filter_map(function, iter_object):
+    mapped = list(map(function, iter_object))
+    filtered = []
 
-    for i in range(2):
-        calls_list.append(func(*args))
+    for item in mapped:
+        if item[0] == True:
+            filtered.append(item[1])
 
-    return calls_list
+    return filtered
 
 
-print(call_twice(input, 'Enter a value: '))
+
+def make_stars(x):
+    if x > 0:
+        return True, '*' * x
+    return False, ''
+
+
+lst = [1, 0, 5, -5, 2]
+
+for s in filter_map(make_stars, lst):
+    print(s)
