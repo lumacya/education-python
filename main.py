@@ -1,11 +1,11 @@
 #! usr/bin/env python3
-def greet(name, *args):
-    res_string = f'Hello, {name}'
+def call_twice(func, *args):
+    calls_list = []
 
-    for n in args:
-        res_string += f' and {n}'
+    for i in range(2):
+        calls_list.append(func(*args))
 
-    return res_string
+    return calls_list
 
 
-print(greet('Ivan'))
+print(call_twice(input, 'Enter a value: '))
