@@ -1,7 +1,25 @@
 #! usr/bin/env python3
-def make_module(step=1):
-    return {'inc': lambda x: x + step, 'dec': lambda x: x - step}
+def memoized(func):
+    results = {}
 
+    def wrapper(number):
+        # Optimize this code
+        if number in results.keys():
+            return results[number]
+        else:
+            results[number] = func(number)
+            return results[number]
+        # Optimize this code
 
-m = make_module(step=2)
-print(m['inc'] (10))
+    return wrapper
+
+@memoized
+def f(x):
+    print('Calculating...')
+    return x * 10
+
+print(f(10))
+print(f(10))
+print(f(20))
+print(f(20))
+print(f(10))
