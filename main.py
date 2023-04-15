@@ -1,25 +1,21 @@
 #! usr/bin/env python3
-def memoized(func):
-    results = {}
 
-    def wrapper(number):
-        # Optimize this code
-        if number in results.keys():
-            return results[number]
-        else:
-            results[number] = func(number)
-            return results[number]
-        # Optimize this code
+def is_even(n):
+    if n == 0:
+        return True
+    elif n == 1:
+        return False
+    else:
+        return is_even(n - 2)
 
-    return wrapper
 
-@memoized
-def f(x):
-    print('Calculating...')
-    return x * 10
+def is_odd(n):
+    if n == 0:
+        return False
+    elif n == 1:
+        return True
+    else:
+        return is_odd(n - 2)
 
-print(f(10))
-print(f(10))
-print(f(20))
-print(f(20))
-print(f(10))
+
+print(is_odd(5))
