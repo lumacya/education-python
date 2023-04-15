@@ -1,21 +1,12 @@
 #! usr/bin/env python3
+import math
 
-def is_even(n):
-    if n == 0:
-        return True
-    elif n == 1:
-        return False
-    else:
-        return is_even(n - 2)
+def calculate_distance(point1, point2):
+    x_a, y_a = point1
+    x_b, y_b = point2
+    distance = math.sqrt(((x_b - x_a) ** 2) + ((y_b - y_a) ** 2))
+    return distance
 
-
-def is_odd(n):
-    if n == 0:
-        return False
-    elif n == 1:
-        return True
-    else:
-        return is_odd(n - 2)
-
-
-print(is_odd(5))
+point1 = [0, 0]
+point2 = [3 ,4]
+print(calculate_distance(point1, point2))
