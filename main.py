@@ -1,12 +1,33 @@
 #! usr/bin/env python3
-import math
+def make_decart_point(x, y):
+    point = {
+        'x': x,
+        'y': y
+    }
 
-def calculate_distance(point1, point2):
-    x_a, y_a = point1
-    x_b, y_b = point2
-    distance = math.sqrt(((x_b - x_a) ** 2) + ((y_b - y_a) ** 2))
-    return distance
+    return point
 
-point1 = [0, 0]
-point2 = [3 ,4]
-print(calculate_distance(point1, point2))
+
+def make_segment(start_point, end_point):
+    segment = {
+        'start_point': start_point,
+        'end_point': end_point
+    }
+
+    return segment
+
+
+def get_mid_point_of_segment(segment):
+    # Can I optimize this code?
+    mid_x = (segment['start_point']['x'] + segment['end_point']['x']) / 2
+    mid_y = (segment['start_point']['y'] + segment['end_point']['y']) / 2
+    mid_point = {
+        'x': mid_x,
+        'y': mid_y
+    }
+
+    return mid_point
+
+
+segment = make_segment(make_decart_point(3, 2), make_decart_point(0, 0))
+print(get_mid_point_of_segment(segment))
