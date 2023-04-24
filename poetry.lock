@@ -114,6 +114,18 @@ files = [
 ]
 
 [[package]]
+name = "hexlet-immutable-fs-trees"
+version = "0.1.8"
+description = "File System Tree"
+category = "main"
+optional = false
+python-versions = ">=3.6,<4.0"
+files = [
+    {file = "hexlet-immutable-fs-trees-0.1.8.tar.gz", hash = "sha256:250159064cf2ce3e7da4a8dbe8527ccdef1ebd63c9a6f9e66606736d4dc40dc0"},
+    {file = "hexlet_immutable_fs_trees-0.1.8-py3-none-any.whl", hash = "sha256:3a4d8afc2c2d17406c0f036fd9ffe200a4c0099bad74acfca74682169d4ca1d7"},
+]
+
+[[package]]
 name = "idna"
 version = "3.4"
 description = "Internationalized Domain Names in Applications (IDNA)"
@@ -191,4 +203,4 @@ socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "58b9e81131a23b2c6f147df46b25aec19108fcc2e2dc35a18184d1c0f1acd127"
+content-hash = "7bdbc049c952e14dc500df6ff07b741b6428f4136adc49cc8fecc85e99f99176"
