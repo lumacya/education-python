@@ -1,11 +1,15 @@
 #! usr/bin/env python3
-def matreshka(n):
-    if n == 1:
-        print('Matreshechka')
-    else:
-        print(f'top of matreshka {n}')
-        matreshka(n - 1)
-        print(f'bottom of matreshka {n}')
+def remove_first_level(tree):
+    result_list = []
 
+    for i in tree:
+        if type(i) is list:
+            for k in i:
+                result_list.append(k)
 
-matreshka(5)
+    return result_list
+
+tree1 = [[5], 1, [3, 4]]
+tree2 = [1, 2, [3, 5], [[4, 3, [1, 2]], 2]]
+
+print(remove_first_level(tree2))
