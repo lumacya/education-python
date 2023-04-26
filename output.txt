@@ -1,5 +1,0 @@
-1) hello
-2) my
-3) name
-4) is
-5) ivan
