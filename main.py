@@ -1,18 +1,28 @@
 #! usr/bin/env python3
 class Person:
-    def __init__(self, name, surname) -> None:
-        self.name = name
-        self.surname = surname
+    def __init__(self, name) -> None:
+        self.__name = name
 
     @property
-    def full_name(self):
-        return f'{self.name} {self.surname}'
+    def name(self):
+        return self.__name
 
-    @full_name.setter
-    def full_name(self, new):
-        self.name, self.surname = new.split(' ')
+    def display_info(self):
+        print(f'Name: {self.__name}')
 
 
-tom = Person('Thomas', 'Shelby')
-tom.full_name = 'Alice Cooper'
-print(tom.full_name)
+class Employee(Person):
+    def __init__(self, name, company) -> None:
+        super().__init__(name)
+        self.__company = company
+
+    def display_info(self):
+        super().display_info()
+        print(f'Company: {self.__company}')
+
+    def work(self):
+        print(f'{self.name} works')
+
+
+tom = Employee('Thomas', 'Microsoft')
+print(tom.name)
