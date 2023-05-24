@@ -1,28 +1,17 @@
 #! usr/bin/env python3
-class Person:
-    def __init__(self, name) -> None:
-        self.__name = name
+def count():
+    counter = 0
 
-    @property
-    def name(self):
-        return self.__name
+    def inner(value):
+        nonlocal counter
+        counter += value
+        return counter
 
-    def display_info(self):
-        print(f'Name: {self.__name}')
-
-
-class Employee(Person):
-    def __init__(self, name, company) -> None:
-        super().__init__(name)
-        self.__company = company
-
-    def display_info(self):
-        super().display_info()
-        print(f'Company: {self.__company}')
-
-    def work(self):
-        print(f'{self.name} works')
+    return inner
 
 
-tom = Employee('Thomas', 'Microsoft')
-print(tom.name)
+if __name__ == '__main__':
+    cnt = count()
+    print(cnt(1))
+    print(cnt(2))
+    print(cnt(-3))
